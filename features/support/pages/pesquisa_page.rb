@@ -16,23 +16,25 @@ class PageAcess
     def click_search
 
         find('button[name="submit_search"]').click
+        
 
     end
 
     def click_product
 
-        find(:xpath, '//*[@id="center_column"]/ul/li/div/div[1]/div')
-
+          find(:xpath, '//*[@id="center_column"]/ul/li/div/div[1]/div').click
+        
     end
 
     def product_details
 
         find('#product_condition')
+        sleep(5)
 
     end
 
     def click_shopcar
-
+        
         find('#add_to_cart').click
 
     end
@@ -86,6 +88,7 @@ class PageAcess
 
         find(:xpath, '//*[@id="HOOK_PAYMENT"]/div[1]/div/p/a').click
         click_button('I confirm my order')
+        sleep(5)
                
     end
 

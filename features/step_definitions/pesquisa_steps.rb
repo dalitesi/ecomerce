@@ -14,18 +14,18 @@ end
 
 Quando('clicar no {string}') do |produto|
   @produto = PageAcess.new
-  @produto.click_product.click
+  @produto.click_product
  
 end
 
 Então('os detalhes da {string} serão apresentados') do |detalhes|
   @detalhes = PageAcess.new
-  @detalhes.product_details  
+  @detalhes.product_details
  
 end
 
 Então('efetuo a compra') do 
-
+  
   @compra = PageAcess.new
   @compra.click_shopcar  
   @compra.click_shopcarcheckout
@@ -35,6 +35,7 @@ Então('efetuo a compra') do
   @compra.sign
   @compra.click_checkoutadress
   @compra.select_terms
+  @compra.payment
   
   
   
