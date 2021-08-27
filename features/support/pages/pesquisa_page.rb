@@ -21,9 +21,10 @@ class PageAcess
     end
 
     def click_product
-
-          find(:xpath, '//*[@id="center_column"]/ul/li/div/div[1]/div').click
-        
+          sleep(5)
+          find(".product-container").click  
+          
+          
     end
 
     def product_details
@@ -92,4 +93,5 @@ class PageAcess
                
     end
 
+    
 end
