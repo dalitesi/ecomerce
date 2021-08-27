@@ -1,9 +1,7 @@
 #language: pt
 
 Funcionalidade: Acesso site
-Realizar uma pesquisa com o conteúdo Faded Short Sleeve
-e abrir a página de detalhes do primeiro produto que aparecer. 
-Gerar evidências pela automação.
+Realizar uma pesquisa para comprar um produto.
 
 @pesquisa
 Cenario: Pesquisa de produto

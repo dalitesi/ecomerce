@@ -1,24 +1,42 @@
 Dado('que o usuário esteja na home') do
-  visit "/"
+    @acess = PageAcess.new
+    @acess.go
+    
 end
 
 Quando('o usuário pesquisar o produto {string}') do |pesquisa|
-  find("#search_query_top").set pesquisa
-  find('button[name="submit_search"]').click
+  @pesquisa = PageAcess.new
+  @pesquisa.search.set pesquisa
+  @pesquisa.click_search
   sleep 4
 
 end
 
-Quando('clicar no {string}') do |string|
-  find(:xpath, '//*[@id="center_column"]/ul/li/div/div[1]/div').click
+Quando('clicar no {string}') do |produto|
+  @produto = PageAcess.new
+  @produto.click_product.click
+ 
+end
+
+Então('os detalhes da {string} serão apresentados') do |detalhes|
+  @detalhes = PageAcess.new
+  @detalhes.product_details  
+ 
+end
+
+Então('efetuo a compra') do 
+
+  @compra = PageAcess.new
+  @compra.click_shopcar  
+  @compra.click_shopcarcheckout
+  @compra.click_checkoutsumary
+  @compra.email.set('dalitesi@gmail.com')
+  @compra.password.set('251992')
+  @compra.sign
+  @compra.click_checkoutadress
+  @compra.select_terms
   
-end
-
-Então('os detalhes da {string} serão apresentados') do |string|
-    find('#product_condition')
-    sleep 4
-end
-
-Então('efetuo a compra') do
+  
+  
 
 end
